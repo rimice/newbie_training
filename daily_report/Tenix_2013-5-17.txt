@@ -1,0 +1,18 @@
+Today was a raniy day, the temperature was appropriate, very comfortable.
+
+So I also began to a day of learning. In moring, I was to familar with git and other instruction as a beginning.
+I searched on Google about some related documents. Learning is the accumulation little by little.
+
+Accumulation is very important.
+
+Then, I also found some documents in the Baidu document libray. But it didn't worked on my firefox browser in the ubuntu.
+The browser prompted me that it lack a plugin of Adobe flash. It maked my head  biger.
+I tried to make it normal, according to the last was ok.
+
+In the afternon, I downloaded a latest kernel on the official linux web site to write one of the most basic linux kernel driver.
+May be my configuration was not correct, the code had writted failed to compile.
+
+After that, I used the ubuntu already existed kernel to compile and it successful, then today.
+
+That's all. Thanks.
+
