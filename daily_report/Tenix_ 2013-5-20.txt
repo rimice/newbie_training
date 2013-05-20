@@ -1,0 +1,20 @@
+Today was a new day, new week too.The weather also turned good,
+and swepted away a few days of overcast sky.
+I went to work as usual,but not so stuck on the road.
+I began a new day in the company.
+
+In the moring, I tested my first linux driver training.
+Code compilation had passed, I also thought there was no problem.
+but, the compiled suffix file of ko cannot be loaded into the kernel.
+The kernel prompt was that inserting './helloworld.ko' was error.
+I searched the problem in the google, and accorded to the instruction one of them. The version of the kernel was caused by
+that problem. 
+The linux kernel is really very big and detailed.
+
+I searched and tested the git instructions so to modify the uploading of name and email in the afternoon. Then I uploaded the code. 
+Later, I studied book about linux driver.
+
+That's all. Thanks.
+
+
+
