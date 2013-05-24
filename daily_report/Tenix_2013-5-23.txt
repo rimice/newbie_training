@@ -1,0 +1,25 @@
+Today, the weather seemed to turn bad, when I went to work ,as if it was
+going to rain in the morning.
+Fortunately, all the way, it was no rain.
+
+The first thing which I did, was to update the linux trainning code of ex01 to 
+make it more standard. 
+I add some comments about the author,setting time, modified time, 
+description and so on.
+The purpose is to facilitate the management in
+the future, so it is very important. 
+
+Director told me about this yesterday ,I also realized that was my mistake,
+but I was doing a study plan.
+
+I did not notice the time had passed so fast, when I realized ,
+it had already been off work.
+After that, I modified the code and uploaded it,but there were some mistakes,
+I upload today.
+It was ok.
+
+what have I studied today ?
+I tried to write the weekly programming and is almost ready.
+
+That all. Thanks.
+
