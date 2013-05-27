@@ -1,0 +1,27 @@
+I was riding a bike to work today ,also can exercise my body. I ate more than usual at noon.
+This new week, I decided to study hard at character device drivers of linux and learn more clearly.
+It is one of the three most devices of linux drivers. The other two parts are block
+device and network device.
+
+The character device drivers of linux is also the most basic. These devices which has no buffer such as mouse, keyboard.
+
+We can access the character devices as accessing a file.
+It contains the system call such as open, close, read, write and so on.
+This is very interesting.
+These functions are concentrated in the struct of file_operation ,one by one with the corresponding about the applications of upper layer.
+So, it is through the struct of file_operation to establish a connection.
+
+The linux kernel is through the device number to distinguish the different devices.
+It contains a main number and a minor number. 
+
+The linux drivers which cover a range of knowledge and it is complicated.
+
+That's all. Thanks.
+
+
+
+
+
+
+
+
