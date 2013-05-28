@@ -1,0 +1,19 @@
+I continued to learn the character devices of linux ,today.
+I achieved the open, close, initialization, allocation of the device number, and loaded into the kernel about the linux drivers.
+
+Of course ,it has some problems when I compiled the code.Some of the common grammatical
+errors. 
+I corrected them according the prompt of compiled. At last I successfully compiled it.
+But,these functions are not complete. There are some function has not been added in it, including ioctl, udev mechanism. I will achieve them as soon as possible.
+
+We had a meeting today,too. After the meeting, I asked Bruce for the ppt which discussed
+in the meeting.
+I don't understand the content in the ppt, because I am new to this.
+I will consult to colleagues and understand it.
+
+That's all. Thanks.
+
+ 
+
+
+
