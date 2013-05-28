@@ -51,11 +51,11 @@ int main()
   int i;
   double time;
   num= (int *)malloc(sizeof(int)*NUMBER);
-  if (num!=0)
-      for(i=0;i<NUMBER;i++)
-	 {
+  if (num!=NULL)
+	for(i=0;i<NUMBER;i++)
+	{
 	   num[i]=rand()%55555;
-	 }
+	}
   else return 0;
 
   qsort(num,NUMBER,sizeof(int),compare); //qsort
