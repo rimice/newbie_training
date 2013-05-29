@@ -1,0 +1,29 @@
+When I went out today, and found that the weather bagan to hot.
+Summer is coming.
+We can't feel hot in the office, but it doesn't matter.
+
+I met a problem today. I could not achieve the function of ioctl, which I had compiled
+the code successful, but it can not work.
+That was very strange.
+I was thinking about this problem, almost whole day.
+I gussed the problem of the header file. I checked the header file, wrote the code 
+again but no use.
+
+The problem was not chek out, until the time off the work.
+I used now is the new linux kernel, the function of ioctl has changed, and I still used
+the the previos parameter.
+
+It was a long day, I feeled.
+The linux kernel is always been improved and it include too many things.
+
+Studying is like rowing a boat against the water, if you don't advance, you
+will lag behind.
+
+That's all. Thanks.
+
+
+
+
+
+
+
