@@ -19,7 +19,7 @@ The linux kernel is always been improved and it include too many things.
 Studying is like rowing a boat against the water, if you don't advance, you
 will lag behind.
 
-That's all. Thanks. 
+That's all. Thanks.  
 
 
 
