@@ -6,7 +6,7 @@ I did this on myself, this time.
 Thanks Allan and director for helping me when I don't understand some of the new items.
 I took more time to test too, today.
 I took the test all the morning until 3 o'clock afternoon.
-BT was still unable to send and receive data with my mobile phone although 
+BT was still unable to send and receive files with my mobile phone although 
 they had paired successfully.
 
 It was very strange. I have done this test many times but all not work.
