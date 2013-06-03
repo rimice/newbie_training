@@ -2,10 +2,10 @@ Today I continued to test the tablet PC, which is called smoke test.
 but it had a new version of M18W, 
 
 It also had some new items to test like GPS, video, reboot, usb.
-I does this on myself, this time.  
-Thanks Alla and charge for helping me when I don't understand some of the new items.
-I taked more time to test too, today.
-I taked the test all the morning until 3 o'clock afternoo.
+I did this on myself, this time.  
+Thanks Allan and director for helping me when I don't understand some of the new items.
+I took more time to test too, today.
+I took the test all the morning until 3 o'clock afternoon.
 BT was still unable to send and receive data with my mobile phone although 
 they had paired successfully.
 
@@ -15,10 +15,10 @@ It was possible that my mobile phone has a problem about BT.
 I wrote a shell script after all the test done.
 The script seted all of the preinstall before the somke test.
 Such as to install the apk of GPS and upload the video to tablet PC.
-I searched 7 satellites beside the windows to use this apk.
+I searched 7 satellites near the windows to use this apk.
 It had really surprised to me a lot.
 
-That all. Thanks.
+That's all. Thanks.
 
 
 
