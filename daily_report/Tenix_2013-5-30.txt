@@ -1,24 +1,22 @@
 Today, I have studied the test about the tablet PC of the version of Mango LTE M06L on the platform of linux.
 
-Allan teached me about these. There are at least ten items to test.
-We firstly to test it the audio.  I recorded a voice which I knocked the table to play, because it has no song in the tablet PC. I plaied it perfectly.
+Allan taught me about these. There are at least ten items to test.
+We firstly to test was the audio.  I recorded a voice which I knocked the table to play, because it has no song in the tablet PC. I played it perfectly.
 
-Then, we test the HDMI, we went to the front of the office, there has a monitor.
-But, It could not display when we connect it.
-After that, we detected the function of SD card of reading and writing.
-It could not achieve too.
+Then, we tested the HDMI, we went to the front of the office, there is a monitor.
+But, It could not display when we connected it.
+After that, we detected the function of SD card to read and write.
+It could not implement too.
 
-In addition to this, the BT could not transmit data.
-I tried another the same table PC to transmit data with my test one. 
-It could not work too.
+In addition to this, the BT could not transfer files.
+I tried another the same table PC to transfer files with my test one. 
+It also could not transfer any file.
 
-The following, I installed the apk to test gsensor and gyrosensor.
+The following, I installed the apk to test g-sensor and gyro sensor.
 It was ok.
 
-We detected the wifi, camera and brightness of LCM, too.
-My charge teached me to connect the wifi through my mobile phone.
+We detected the WIFI, camera and brightness of LCM, too.
+My director taught me to connect the WIFI through my mobile phone.
 It was amazing.
 
 That's all. Thanks. 
- 
-
