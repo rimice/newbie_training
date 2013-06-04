@@ -1,7 +1,7 @@
 It is a new week. When I went out, it was a sunny day. 
-Today, I detected the smoke test ,again. It had added a new apk to test the reboot for 10 times , which was convenience . Because it was automatic test 10 times.
+Today, I did the smoke test ,again. It had added a new apk to test the reboot for 10 times , which was convenience . Because it was automatic test 10 times.
 
-what the purpose of today's test is to confirm how much time does it takes.
+What the purpose of today's test is to confirm how much time does it takes.
 I took the test in the afternoon, which cost two hours.
 In the process of test, I found the HDMI could not transfer the sound to the monitor.
 After the test, Allan taught me to catch the log which was produced in the mobile folder of tablet PC,
