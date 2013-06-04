@@ -33,15 +33,15 @@
 *******************************************************************/
 int operation(int num)
 {  
-    int i=0;
-    unsigned int count=0;
-    for(i;i<32;i++)
-      {
-        if(num&0x80000000)
-           count++;
-        num<<=1;
-      }
-    return count;
+	int i=0;
+	unsigned int count=0;
+	for(i=0;i<32;i++)
+	{
+		if(num&0x80000000)
+		count++;
+		num<<=1;
+	}
+	return count;
 }
 
 
@@ -52,8 +52,8 @@ int operation(int num)
 
 int main()
 {
-   unsigned int num;
-   scanf("%d",&num);  
-   printf("result=%d\n",operation(num));
-
+	unsigned int num;
+	scanf("%d",&num);  
+	printf("result=%d\n",operation(num));
+	return 0;
 }
