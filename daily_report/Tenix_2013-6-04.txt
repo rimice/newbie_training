@@ -1,0 +1,26 @@
+I tried to write another char device which used "misc_register" to add a character
+device to kernel, today.
+
+It is a another technique about character device, and misc device come into common use in an embedded system. 
+Misc device use major number 10, which unlike regular character device whose major number can be allocated.
+Actually misc register used major number 10 to call the register_chardev function. 
+
+The advantage of misc device is that which can be create device file automatically,
+without using mknod command to create a device file.
+Because it can call the function such as class_device_creat and device_creat.
+This function has posed a lot of convenience.
+It also simplifies code considerably.
+
+Meanwhile, disadvantage is also exposed. It only use  major number 10 to register.
+But as a whole, I think the advantage is larger than the disadvantage.
+
+That's all. Thanks.
+
+
+
+
+
+
+
+
+
