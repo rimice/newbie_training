@@ -31,8 +31,8 @@
 
 struct miscdev_ex{
  
-  char buf[DEV_SIZE];
-  unsigned int cur_size;
+	char buf[DEV_SIZE];
+	unsigned int cur_size;
 };
 
 struct miscdev_ex *miscp;
@@ -43,9 +43,9 @@ struct miscdev_ex *miscp;
 */
 int misc_open(struct inode *node,struct file *filp)
 {
-    filp->private_data=miscp;
-    printk("open is ok\n");
-    return 0;
+	filp->private_data=miscp;
+	printk("open is ok\n");
+	return 0;
 }
 
 /*
@@ -66,36 +66,36 @@ int misc_close(struct inode *node,struct file *filp)
 *******************************************************************************************/
 ssize_t misc_read(struct file*filp, char __user *buf,size_t count,loff_t *offset)
 {
-  int ret;
-  struct miscdev_ex *miscp = filp->private_data;
+	int ret;
+	struct miscdev_ex *miscp = filp->private_data;
   
-  if(!miscp->cur_size)
-     {
-      return 0;
-     }
-  if(*offset > DEV_SIZE)
-    {
-      return count? -ENXIO:0;
-    }
-  if(*offset+count > DEV_SIZE)
-    {
-       count = DEV_SIZE-*offset;
-    }
+	if(!miscp->cur_size)
+	{
+		return 0;
+	}
+	if(*offset > DEV_SIZE)
+	{
+		return count? -ENXIO:0;
+	}
+	if(*offset+count > DEV_SIZE)
+	{
+		count = DEV_SIZE-*offset;
+	}
   
-  if(!copy_to_user(buf,miscp->buf+*offset,count))
-    {
-       ret = count;
-       miscp->cur_size = count;
-       *offset += count;
-       printk("kernel read is ok\n");
-       printk("buf=%s\n",miscp->buf);
-    }
-   else
-    {
-     printk("kernel read is error\n");
-     ret = -EFAULT;
-    }     
-   return ret;
+	if(!copy_to_user(buf,miscp->buf+*offset,count))
+	{
+		ret = count;
+		miscp->cur_size = count;
+		*offset += count;
+		printk("kernel read is ok\n");
+		printk("buf=%s\n",miscp->buf);
+	}
+	else
+	{
+		printk("kernel read is error\n");
+		ret = -EFAULT;
+	}     
+		return ret;
 }
 
 
@@ -108,29 +108,29 @@ ssize_t misc_read(struct file*filp, char __user *buf,size_t count,loff_t *offset
 *******************************************************************************************/
 ssize_t misc_write(struct file *filp, const char __user *buf, size_t count, loff_t *offset)
 {
-  int ret;
-  struct miscdev_ex *miscp =  filp->private_data;
+	int ret;
+	struct miscdev_ex *miscp =  filp->private_data;
   
-  if (*offset > DEV_SIZE)
-    {
-      return count? -ENXIO:0;
-    }
-  if(*offset + count > DEV_SIZE)
-    {
-      printk("offset+ count > DEV_SIZE, error\n");
-      return -ENXIO;
-    }
+	if (*offset > DEV_SIZE)
+	{
+		return count? -ENXIO:0;
+	}
+		if(*offset + count > DEV_SIZE)
+	{
+		printk("offset+ count > DEV_SIZE, error\n");
+		return -ENXIO;
+	}
 
-  if(!copy_from_user(miscp->buf+*offset,buf,count))
-    {
-      printk("kernel write is ok\n");
-      *offset += count;
-      miscp->cur_size = count;
-      ret = count;
-    }
-  else
-      ret = -EFAULT;
-  return ret;
+	if(!copy_from_user(miscp->buf+*offset,buf,count))
+	{
+		printk("kernel write is ok\n");
+		*offset += count;
+		miscp->cur_size = count;
+		ret = count;
+	}
+	else
+	ret = -EFAULT;
+ 	return ret;
 }
 
 
@@ -141,8 +141,8 @@ ssize_t misc_write(struct file *filp, const char __user *buf, size_t count, loff
 *******************************************************************************************/
 loff_t misc_llseek(struct file *filp,loff_t offset, int whence)
 {
-   loff_t new_pos;
-   loff_t old_pos = filp->f_pos;
+	loff_t new_pos;
+	loff_t old_pos = filp->f_pos;
 
 	switch(whence)
 	{
@@ -178,11 +178,11 @@ loff_t misc_llseek(struct file *filp,loff_t offset, int whence)
 */
 struct file_operations misc_fops=
 {
-  .open = misc_open,
-  .release = misc_close,
-  .write = misc_write,
-  .read = misc_read,
-  .llseek = misc_llseek,  
+	.open = misc_open,
+	.release = misc_close,
+	.write = misc_write,
+	.read = misc_read,
+	.llseek = misc_llseek,  
 };
 
 /*
@@ -190,9 +190,9 @@ struct file_operations misc_fops=
 */
 static struct miscdevice misc_dev=
 {
-  .minor= MISC_DYNAMIC_MINOR,
-  .name= MISC_NAME,
-  .fops= &misc_fops,
+	.minor= MISC_DYNAMIC_MINOR,
+	.name= MISC_NAME,
+	.fops= &misc_fops,
 };
 
 
@@ -201,22 +201,22 @@ static struct miscdevice misc_dev=
 */
 static int __init misc_init(void)
 {
-   int ret;
-   miscp = kmalloc(sizeof(struct miscdev_ex),GFP_KERNEL);
-   if(!miscp)
-     {
-        printk("kmalloc is error\n");
-     }
+	int ret;
+	miscp = kmalloc(sizeof(struct miscdev_ex),GFP_KERNEL);
+	if(!miscp)
+	{
+		printk("kmalloc is error\n");
+	}
    
-    ret = misc_register(&misc_dev);
-   if( !ret );
-       {
-         printk("register is error\n");
-         return ret;
-       }
+	ret = misc_register(&misc_dev);
+	if( !ret );
+	{
+		printk("register is error\n");
+		return ret;
+	}
        
-    printk("register is ok\n");
-    return 0;
+	printk("register is ok\n");
+	return 0;
 } 
 
 /*
@@ -224,9 +224,9 @@ static int __init misc_init(void)
 */
 static void __exit misc_exit(void)
 {
-    printk("exit\n");	
-    kfree(miscp);
-    misc_deregister(&misc_dev);	
+	printk("exit\n");	
+	kfree(miscp);
+	misc_deregister(&misc_dev);	
 }
 
 
