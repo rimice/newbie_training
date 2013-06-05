@@ -20,23 +20,24 @@
 #include <asm/uaccess.h>
 #include <linux/errno.h>
 #include <linux/device.h>
+#include <linux/slab.h>
 #include "ex02_cmd.h"
 
 #define DEV_SIZE 100
+unsigned int major,minor;
 
 static struct class *ex_class;
 
 struct chardev_ex 
 {
 	char buf[DEV_SIZE];
-	unsigned int major;
-	unsigned int minor;
-	unsigned int cur_size;
-	dev_t cdevno;
+	unsigned int cur_size;	
 	struct cdev ex02;
 };
 
-struct chardev_ex chardev;
+dev_t cdevno;
+struct chardev_ex cdev;
+
 
 /*********************************************************
 *** Description:
@@ -44,9 +45,6 @@ struct chardev_ex chardev;
 **********************************************************/
 int ex02_open(struct inode *node,struct file *filp)
 { 
-	struct chardev_ex *cdevp;
-	cdevp = container_of(node->i_cdev,struct chardev_ex,ex02);
-	filp->private_data=cdevp; 
 	printk("open is ok\n");
 	return 0;
 }
@@ -67,15 +65,14 @@ int ex02_close(struct inode *node,struct file *filp)
 **********************************************************/
 ssize_t ex02_read(struct file *filp,char __user *buf,size_t count,loff_t *offset)
 {
-int ret;
-struct chardev_ex *cdevp = filp->private_data;
-	if(!cdevp->cur_size)
+	int ret;
+	if(!cdev.cur_size)
 	{
 		return 0;
 	}
 
 
-if(copy_to_user(buf,cdevp->buf,count))
+if(copy_to_user(buf,cdev.buf,count))
 	{
 		ret = -EFAULT;
 		printk("kernel read is fail\n");
@@ -83,10 +80,10 @@ if(copy_to_user(buf,cdevp->buf,count))
 else
 	{
 		ret = count;
-		cdevp->cur_size = count;
-		printk("kernel read is ok  ");
-		printk("cur_size:%d\n",cdevp->cur_size);
-		printk("buf=%s\n",cdevp->buf);
+		cdev.cur_size = count;
+		printk("kernel read is ok");
+		printk("cur_size:%d\n",cdev.cur_size);
+		printk("buf=%s\n",cdev.buf);
 	}
 
 	return ret;
@@ -99,9 +96,7 @@ else
 static ssize_t ex02_write(struct file *filp,const char __user *buf,size_t count, loff_t *offset)
 {
 	ssize_t ret;
-	struct chardev_ex *cdevp = filp->private_data;
-  
-	if(copy_from_user(cdevp->buf,buf,count))
+	if(copy_from_user(cdev.buf,buf,count))
 	{
 		ret = -EFAULT;       
 		printk("kernel write is wrong\n");
@@ -110,8 +105,8 @@ static ssize_t ex02_write(struct file *filp,const char __user *buf,size_t count,
 	{
 		ret = count;
 		printk("kernel write is ok  ");
-		cdevp->cur_size = count;
-		printk("cur_size=%d\n",cdevp->cur_size);    
+		cdev.cur_size = count;
+		printk("cur_size=%d\n",cdev.cur_size);    
 	}
   
 	return ret;
@@ -124,13 +119,11 @@ static ssize_t ex02_write(struct file *filp,const char __user *buf,size_t count,
 **********************************************************/
 static ssize_t ex02_ioctl(struct file *filp,unsigned int cmd,unsigned long arg)
 {
-	struct chardev_ex *cdevp = filp->private_data;
 	ssize_t ret = 0;
 	switch(cmd)
 		{
 		case ex02_CLEAR:
-			memset(cdevp->buf,0,DEV_SIZE);		
-			filp->f_pos = 0;
+			memset(cdev.buf,0,DEV_SIZE);		
 			ret = 0;
                         printk("buf is clear\n");
 			break;
@@ -161,39 +154,34 @@ struct file_operations ex02_fops = {
 static int __init ex02_init(void)
 {
 	int result = 0;
-	chardev.cur_size = 0;
-	chardev.major = 0;
-	chardev.minor = 0;
+	cdev.cur_size = 0;
 
-	if(chardev.major)
+	if(major)
 	{
-		chardev.cdevno = MKDEV(chardev.major,chardev.minor);
-		result = register_chrdev_region(chardev.cdevno,1,"ex02");
+		cdevno = MKDEV(major,minor);
+		result = register_chrdev_region(cdevno,1,"ex02");
 	}
 	else
 	{
-		result = alloc_chrdev_region(&chardev.cdevno,chardev.minor,1,"alloc driver");
-		chardev.major = MAJOR(chardev.cdevno);
-		chardev.minor = MINOR(chardev.cdevno);    
+		result = alloc_chrdev_region(&cdevno,minor,1,"alloc driver");
+		    
 	}
 	if(result < 0)
 	{
 		printk("register is wrong\n");
 		return result;
 	}
-   
-	printk("major[%d] minor[%d]\n", chardev.major, chardev.minor);
 
-	cdev_init( &chardev.ex02, &ex02_fops);
+	cdev_init( &cdev.ex02, &ex02_fops);
 
-	if(!cdev_add(&chardev.ex02,chardev.cdevno,1)) //add
+	if(!cdev_add(&cdev.ex02,cdevno,1)) //add
 	{
 		printk("cdev_add is ok\n"); 
 	}
 	else
 	{
 		printk("cdev_add is error\n"); 
-		unregister_chrdev_region(chardev.cdevno,1);
+		unregister_chrdev_region(cdevno,1);
 	}
 /*
 *Creat class and device.
@@ -204,7 +192,7 @@ static int __init ex02_init(void)
 		printk("creat ex_class failed!\n");
 		return -1;
 	}
-	device_create(ex_class,NULL,chardev.cdevno,NULL,"ex02");
+	device_create(ex_class,NULL,cdevno,NULL,"ex02");
 	printk("device create ok!\n");
 
 	return 0;
@@ -218,9 +206,9 @@ static void __exit ex02_exit(void)
 {
 /*delete the cdev,unregister char device,destory class and device
 */
-	cdev_del(&chardev.ex02);
-	unregister_chrdev_region(chardev.cdevno,1);
-	device_destroy(ex_class,chardev.cdevno);              
+	cdev_del(&cdev.ex02);
+	unregister_chrdev_region(cdevno,1);
+	device_destroy(ex_class,cdevno);              
 	class_destroy(ex_class);
 	printk("device destory ok\n");
 }
