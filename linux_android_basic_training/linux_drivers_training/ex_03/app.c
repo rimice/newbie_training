@@ -31,26 +31,25 @@ int main(void)
 		printf("open is error\n");
 		return -1;
 	}
-        printf("open is ok\n");
+	printf("open is ok\n");
 
 	ret=write(fd, "Tenix Xu", 10);//写入
-        if(ret!= 10)
-           {
-             printf(" writing may error\n");
-             exit(1);
-            }   
-        
-        lseek(fd, 0, SEEK_SET);
+	if(ret!= 10)
+	{
+		printf(" writing may error\n");
+		exit(1);
+	}   
+	lseek(fd, 0, SEEK_SET);
 	ret=read(fd, buf, 10);//读出
 	if (ret <0 )
-	   {
-	     printf("Read is error\n");
-	     exit(1);
-	   }
-        printf("buf is [%s]\n", buf);
+	{
+		printf("Read is error\n");
+		exit(1);
+	}
+	printf("buf is [%s]\n", buf);
     
 	close(fd); 
-        printf("close is ok\n");
+	printf("close is ok\n");
 	return 0;
 }
 
