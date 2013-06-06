@@ -1,0 +1,18 @@
+Today, I continued to write misc driver. I tried to add a ioctl function and simplified 
+the code.
+
+It is not difficult ,since a few days ago study. But, the kernel has still a
+lot of functions. It's certainly worth to effort. It's so mysterious.
+
+In the afternoon, my director told me to have a somke test. The image is from Taibei.
+As soon as I listened to this, I feeled a bit excited.     
+I also want to try it, if there are any different.
+
+Willian helped me to download the image from server. 
+As my expected, this time, I can transfer files with my mobile phone. 
+I feel very happy. That really surprised me. I had tried many times but could not wrok,
+in the previous version.
+Product is to be done more and more perfect.
+
+That's all. Thanks.
+
