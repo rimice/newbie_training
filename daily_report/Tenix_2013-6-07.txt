@@ -1,0 +1,29 @@
+Today I was caught in the rain, when I went out.
+It did rain pretty heavily,today. 
+More than half of my clothes were all wet though I wear a raincoat,
+when I went to the company. My shoes even were wet, too.
+
+But,come what may, we must finish the work.
+Today, I tried to write a linked list programming, that's a typical programming which is a student management system 
+uses linked list for data creating, inserting, deleting, and display the result.
+
+Linked lists is a important data structure in data structure, which includes stack,
+queue and linear list.
+
+It's hard to deal linked lists with C pointer which embodies a significant trait of
+C programming language.
+
+This is also its charm.
+That's all.Thanks.
+
+
+
+
+
+
+
+
+
+
+
+
