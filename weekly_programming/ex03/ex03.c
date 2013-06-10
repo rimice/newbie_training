@@ -7,10 +7,11 @@
 ***	Description:
 ***		Creat a linked list, you can insert and delete nodes, print the list.
 ***	Author/Creat Date:
-*** 		Tenix, jun 07, 13
+*** 		Tenix Xu, Jun 07, 13
 ***
 ***	Modification History:
-***
+***		Jun 10,13
+		Amend insert
 ***	Note:
 ***
 ************************************************************************************************/
