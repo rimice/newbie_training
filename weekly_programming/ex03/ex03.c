@@ -7,7 +7,7 @@
 ***	Description:
 ***		Creat a linked list, you can insert and delete nodes, print the list.
 ***	Author/Creat Date:
-*** 		Tenix Xu, Jun 07, 13
+*** 		Tenix, jun 07, 13
 ***
 ***	Modification History:
 ***
@@ -82,16 +82,17 @@ struct node* creat(struct node* head)
 struct node* insert(struct node* head)
 {
 	struct node *temp,*newp,*p;
-	p=temp=head;
+	p=head;
+	if(p==NULL)
+	{
+		printf("please creat a node first\n");
+		return NULL ;
+	}
+
 	newp = (struct node*)malloc(sizeof(struct node));
 	if(newp==NULL)
 	{
 		printf("malloc is error\n");
-	}
-	if(head==NULL)
-	{
-		printf("please creat a node first\n");
-		return;
 	}
 	printf("Input the number:");
 	scanf("%d",&newp->num);
@@ -102,8 +103,6 @@ struct node* insert(struct node* head)
 	printf("Input the age:");
 	scanf("%d",&newp->age);
  
-
-
 	while((p->num<newp->num)&&(p->next!=NULL))
 	{
 		temp=p;
@@ -114,12 +113,20 @@ struct node* insert(struct node* head)
 	{		
 		p->next=newp;
 		newp->next=NULL;
+		
 	}
 	else
 	{	
-		temp->next=newp;
-		newp->next=p;
-
+		if(p==head)
+		{
+			newp->next=p;	
+			head=newp;				
+		}
+		else
+		{
+			temp->next=newp;
+			newp->next=p;
+		}
 	}
 	printf("insert a node is ok\n");
 	return head;
@@ -220,7 +227,7 @@ int main()
 		}
 		else if(cmd == 'i')
 		{
-			insert(head);
+			head=insert(head);
 		}
 		else if(cmd == 'd')
 		{
@@ -236,6 +243,8 @@ int main()
 		{
 			break;
 		}
+		else 
+    			printf("c:creat,i:insert,d:delete,s:display>>:");
 	}
 	return 0; 
 }
