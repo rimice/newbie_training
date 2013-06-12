@@ -2,7 +2,7 @@ I tried to write another char device which used "misc_register" to add a charact
 device to kernel, today.
 
 It is a another technique about character device, and misc device come into common use in an embedded system. 
-Misc device use major number 10, which unlike regular character device whose major number can be allocated.
+Misc device uses major number 10, which unlike regular character device whose major number can be allocated.
 Actually misc register used major number 10 to call the register_chardev function. 
 
 The advantage of misc device is that which can be create device file automatically,
