@@ -3,7 +3,7 @@ It did rain pretty heavily,today.
 More than half of my clothes were all wet though I wear a raincoat,
 when I went to the company. My shoes even were wet, too.
 
-But,come what may, we must finish the work.
+But,whatever we must finish the work.
 Today, I tried to write a linked list programming, that's a typical programming which is a student management system 
 uses linked list for data creating, inserting, deleting, and display the result.
 
