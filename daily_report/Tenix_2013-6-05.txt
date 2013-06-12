@@ -1,4 +1,4 @@
-Today, I update the code of linux driver training ex02, which my director had point out my mistakes about code style.
+Today, I update the code of linux driver training ex02, which my director had pointed out my mistakes about code style.
 
 This is really a problem we should pay attention to.
 In fact, if developing a strict code style, for sufficient error handing, most of the problems could have been avoided.
@@ -7,7 +7,7 @@ I remembered the days when I just into the company, my director had told me that
 a clean and compact code is a work of art, too.
 
 That's right, whatever is worth doing at all, is worth doing well.
-In addition, we should be carefully in everything we do.
+In addition, we should be carefull in everything we do.
 
 A good code is clear, rigorous thinking, I think.
 I decide to do it well, I'll try my best to do.
