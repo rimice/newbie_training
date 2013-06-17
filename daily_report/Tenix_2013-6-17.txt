@@ -1,0 +1,18 @@
+I tried to download a source code of android when I at the beginning of the work, today.
+But, I don't know where to download.
+Then, Allan helped me download a version of Mango 3G platform from servers. 
+
+In the next few days, I will use them to build up an image.
+At 10:00, I started the class until about 3:40.
+
+The component of the notebook, a little history of the company 
+and its human resources were introduced.
+
+I went back to the office after the class and did a smoke test with the new image.
+There was one error with the HDMI test, the sound can't come out from the HDMI monitor.
+
+That's all. Thanks.
+
+
+
+
