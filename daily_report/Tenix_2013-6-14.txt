@@ -7,7 +7,7 @@ However, I was surprised that the food here is very bad.
 
 It has almost no flavor and no variety. 
 I would have thought that the worst food in the world is in the university canteen.
-Could it just be that this is the factory.
+May be it is now in the factory.
 
 After class, I tried to write my delay function in the kernel, which can be calculated.
 
