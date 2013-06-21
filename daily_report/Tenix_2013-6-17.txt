@@ -1,4 +1,4 @@
-I tried to download a source code of android when I at the beginning of the work, today.
+I tried to download the source code of android when I at the beginning of the work, today.
 But, I don't know where to download.
 Then, Allan helped me download a version of Mango 3G platform from servers. 
 
