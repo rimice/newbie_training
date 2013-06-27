@@ -28,12 +28,12 @@
 #include <linux/jiffies.h>
 #include <linux/delay.h>
 
-#define DEV_SIZE 100
+#define BUF_SIZE 100
 #define MISC_NAME "mis_drv"
 
 struct miscdev_ex{
  
-	char buf[DEV_SIZE];
+	char buf[BUF_SIZE];
 	unsigned int cur_size;
 };
 
@@ -76,24 +76,24 @@ ssize_t misc_read(struct file*filp, char __user *buf,size_t count,loff_t *offset
 	{
 		return 0;
 	}
-	if(*offset > DEV_SIZE)
+	if(*offset > BUF_SIZE)
 	{
 		return count? -ENXIO:0;
 	}
-	if(*offset+count > DEV_SIZE)
+	if(*offset+count > BUF_SIZE)
 	{
-		count = DEV_SIZE-*offset;
+		count = BUF_SIZE-*offset;
 	}
 	
 	printk("now jiffies is %lu\n",get_jiffies_64());
 	printk("while 3s\n"); delay =jiffies+3*HZ;
 	while(time_before(jiffies,delay))
-	schedule();	
+		schedule();	
  	printk("now jiffies is %lu\n",get_jiffies_64());
 	
 	printk("while 3s\n");delay =jiffies+3*HZ;
 	while(time_after(delay,jiffies))
-	schedule();
+		schedule();
 	printk("now jiffies is %lu\n",get_jiffies_64());
 	
 	
@@ -110,7 +110,7 @@ ssize_t misc_read(struct file*filp, char __user *buf,size_t count,loff_t *offset
 		printk("kernel read is error\n");
 		ret = -EFAULT;
 	}     
-		return ret;
+	return ret;
 }
 
 
@@ -126,13 +126,13 @@ ssize_t misc_write(struct file *filp, const char __user *buf, size_t count, loff
 	int ret;
 	struct miscdev_ex *miscp =  filp->private_data;
   
-	if (*offset > DEV_SIZE)
+	if (*offset > BUF_SIZE)
 	{
 		return count? -ENXIO:0;
 	}
-		if(*offset + count > DEV_SIZE)
+	if(*offset + count > BUF_SIZE)
 	{
-		printk("offset+ count > DEV_SIZE, error\n");
+		printk("offset+ count > BUF_SIZE, error\n");
 		return -ENXIO;
 	}
 
@@ -154,7 +154,7 @@ ssize_t misc_write(struct file *filp, const char __user *buf, size_t count, loff
 		ret = count;
 	}
 	else
-	ret = -EFAULT;
+		ret = -EFAULT;
  	return ret;
 }
 
@@ -172,23 +172,23 @@ loff_t misc_llseek(struct file *filp,loff_t offset, int whence)
 	switch(whence)
 	{
 		case SEEK_SET:
-		new_pos = offset;
-		break;
+				new_pos = offset;
+				break;
 
 		case SEEK_CUR:
-		new_pos = old_pos + offset;
-		break;
+				new_pos = old_pos + offset;
+				break;
 
 		case SEEK_END:
-		new_pos = DEV_SIZE + offset;
-		break;
+				new_pos = BUF_SIZE + offset;
+				break;
 
 		default:
-		printk("offset is wrong\n");
+			printk("offset is wrong\n");
 		return -EINVAL;
 	}
 
-       if(new_pos < 0 || new_pos > DEV_SIZE)
+       if(new_pos < 0 || new_pos > BUF_SIZE)
 	{
 		printk("F_pos is wrong\n");
 		return -EINVAL;
@@ -231,6 +231,7 @@ static int __init misc_init(void)
 	if(!miscp)
 	{
 		printk("kmalloc is error\n");
+		return -ENOMEM;
 	}
    
 	ret = misc_register(&misc_dev);
