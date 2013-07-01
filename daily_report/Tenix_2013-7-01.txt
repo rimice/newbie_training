@@ -1,0 +1,19 @@
+It was a good weather today, also a new week.
+But there were not many people go to the company to work as usually.
+Even the lunch time, the dining room in the RD building also not opened.
+We went to eat lunch at the factory.
+I ate a bowl of noodles there.
+
+It was the beginning of an inventory of the company, though 
+I was not very clear about it.
+
+In today's work, I read the GPIO document which was in the kernel.
+I learned something about its definitions, rules and so on.
+But, I don't know how to use it.
+In the few days, I will try to write a GPIO Linux driver.
+That's all. Thanks.
+
+
+
+
+
