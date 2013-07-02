@@ -1,0 +1,19 @@
+The sunshine was on my face ,when I went to work.
+In this time, I knew that it would very hot today.
+
+In the morning, I did a smoke test.
+One error in this test, it had no sound from HDMI monitor.
+This is the problem that has always been.
+
+In the afternoon, my director told me and albert something updated about
+the smoke test.
+Something like the regression test which to test the NVRAM if 
+it lost data after flashing the image.
+Another to test the device was that if it auto reboot in META mode.
+It has no error if it not reboot.
+
+I and Ablet retest it again before we leave work.
+That's all. Thanks.
+
+
+
