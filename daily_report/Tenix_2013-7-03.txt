@@ -1,0 +1,15 @@
+This was the third day I wrote the GPIO driver.
+I still could not find the definition of Mango GPIO in the kernel.
+
+There may be some differences from what I thought.
+How does it describe in the kernel, and where is the address.
+If there is no address, how to operate it ,which makes 
+me confused.
+
+These are all my problem now, I am trying to solve them.
+In any case ,for my part I admit that there always have a way which
+I haven't found yet.
+
+I will keep working on it and never give up.
+That's all. Thanks.
+
