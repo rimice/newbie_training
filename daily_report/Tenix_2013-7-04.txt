@@ -1,0 +1,14 @@
+It was still very hot today.
+It suddenly get hot just few days before.
+
+Today, I continued to study the GPIO driver.
+Fortunately, I found the GPIO functions which were wrote by MTK in the kernel.
+
+These functions seem to get or set the value of GPIO, even the direction 
+of input or output.
+But the strange thing is that I still can not find the address of GPIO
+in the file I found.
+
+I wonder where is the address. Perhaps it hide in the function or not.
+I will keep analysing the function. 
+That's all. Thanks.
