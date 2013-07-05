@@ -1,0 +1,48 @@
+Perhaps the hot weather made me could not sleep after I drank a cup of
+coffee yesterday.
+I think that I will not drink coffee in the summer night,
+although it is very delicious.
+
+Today, I tried the GPIO functions which was defined by MTK to get the value
+of GPIO.
+First, I read the schematic diagram carefully to find a GPIO pin which can be test.
+ 
+I chose the pin of front camera and WIFI for my test.
+The pin of front camera will turn to zero if I open the front camera ,as the same time
+the value of WIFI pin should not change.
+
+I burned the program to Mango kernel to verify the value I get from the
+GPIO,and that indeed is true.
+
+To this, I also felt very happy.
+That's all. Thanks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
