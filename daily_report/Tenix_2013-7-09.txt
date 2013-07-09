@@ -1,0 +1,13 @@
+I started to write a proc driver from yesterday.
+I need to finish it in three days.
+I have got a problem: the program could not use command of echo to write data to the proc device which can be 
+created under proc directory automatically.
+
+It always prompt that the address is error.
+I am still considering the possible cause about this error.
+
+Bruse told us something about repo in today's meeting.
+He introduced some basic concepts, some analyses about parameter of repo and 
+how to download repo guide script. 
+It is just a script written by Google to help us download and manage andriod project repositories.
+That's all. Thanks.
