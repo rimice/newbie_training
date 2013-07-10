@@ -9,6 +9,6 @@ of input or output.
 But the strange thing is that I still can not find the address of GPIO
 in the file I found.
 
-I wonder where is the address. Perhaps it hide in the function or not.
+I wonder where is the address. Perhaps it hides in the function or not.
 I will keep analysing the function. 
 That's all. Thanks.
