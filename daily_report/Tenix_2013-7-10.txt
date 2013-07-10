@@ -1,0 +1,24 @@
+The weather is still hot.
+The sun shines brightly even when I go to work in the morning.
+
+Today, I fixed the bug about the proc driver program wrote
+in the yesterday.
+Now ,it can be access under the proc directory by using command of
+echo and cat.
+
+I did a smoke test in the afternoon.
+This is the version of Mango 3G which is different 
+from the version of WIFI.
+It has a SIM card.
+So, we also increase a new SIM test.
+That's all. Thanks.
+
+
+
+
+
+
+
+
+
+
