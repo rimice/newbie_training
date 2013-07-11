@@ -1,0 +1,19 @@
+
+I tried to write a driver under sys directory 
+of the kernel today.
+
+The sys file system is a special file system,
+similar to the proc file system but more complex than 
+proc file system, which is used to organize
+the equipment into a hierarchical structure and
+provides kernel detailed information to the
+user mode applications.
+
+The proc file system is an memory file system that
+allowed user access to kernel data structures that 
+contained information, such as system and 
+device status information.
+
+I will study hard about sys file system.
+That's all. Thanks.
+
