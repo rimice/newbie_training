@@ -1,0 +1,14 @@
+The hot weather last for two weeks.
+Of course,the hot weather will increase the water loss of body.
+I have been feeling very thirty several days ago ,
+so I brought a water bottle today.
+
+In the morning, I did a smoke test for the new version of Mango 3G which
+was M21W.
+It add some APK which can test audio, WIFI, SD card and so on.
+
+In the afternoon, I finished the Linux driver about sys file system.
+It can be created a file node under the /sys/bus directory automatically.
+I  can load data into the node by using the echo command and read them back
+by using the cat command.
+That's all. Thanks.
