@@ -159,15 +159,18 @@ struct node* del(struct node* head,int num)
 	if(p->num == num)
 	{
 		if( head == p )
-		{
+		{	
 			head=head->next;
-			printf("delete num is ok:%d\n",num);	
+			printf("delete num is ok:%d\n",num);
+			free(p);
 			return head;
 		}
 		else
-		{
+		{	
+			
 			temp->next=p->next;
 			printf("delete num is ok:%d\n",num);
+			free(p);
 			return head;
 		}
 	}
