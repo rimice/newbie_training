@@ -4,7 +4,7 @@ I have been feeling very thirty several days ago ,
 so I brought a water bottle today.
 
 In the morning, I did a smoke test for the new version of Mango 3G which
-was M21W.
+was M21G.
 It add some APK which can test audio, WIFI, SD card and so on.
 
 In the afternoon, I finished the Linux driver about sys file system.
