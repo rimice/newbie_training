@@ -3,7 +3,7 @@ The sun shines brightly even when I go to work in the morning.
 
 Today, I fixed the bug about the proc driver program wrote
 in the yesterday.
-Now ,it can be access under the proc directory by using command of
+Now ,it can be accessed under the proc directory by using command of
 echo and cat.
 
 I did a smoke test in the afternoon.
