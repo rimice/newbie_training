@@ -1,6 +1,6 @@
 /**********************************************************************************************
 *** Filename:
-***		ex04.c
+***		ex05.c
 ***	Copyright (c) 2013 Wistron
 ***	All rights reserved.
 ***
@@ -8,12 +8,11 @@
 ***		Get 10000000 random numbers
 ***
 ***	Author/Creat Date:
-*** 		Tenix Xu, Jun 28,13
+*** 		Tenix Xu, July 16,13
 ***
 ***	Note:
 ***
 ************************************************************************************************/
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>
@@ -49,7 +48,7 @@ void file_show(FILE *fd,int *a)
 {
 	int i;
 	for(i=0;i<N;i++)
-		fprintf(fd,"a[%d]=%d	",i,a[i]);
+		fprintf(fd,"%d\n",a[i]);
 }
 
 
@@ -72,5 +71,7 @@ void main()
 	
 	get_random(a);
 	file_show(fd,a);
+	fclose(fd);
+	printf("file.txt close is ok\n");
 }
 
