@@ -1,0 +1,14 @@
+Earthquakes are a common geological phenomenon, they may 
+happen all over the world at any time.
+
+We want to forecast the earthquake due to their devastating 
+effects.
+Even though earthquakes cannot be forecasted with 100 percent
+certainty, there are still some strange things that we 
+can do to help forecast earthquake.
+
+We can look the behavior of animals such as dogs and cats,
+they may change their behavior patterns prior to an earthquake.
+
+If we can notice something different, maybe survived in the disaster.
+That's all. Thanks.
